@@ -149,4 +149,35 @@ public class Pond : ResourceNode
     {
         Gizmos.DrawWireSphere(this.transform.position, range);
     }
+
+    #region Testing
+    void activateVictoryCountdownForPlayer()
+    {
+        
+    }
+    void deactivateVictoryCountdownForPlayer()
+    {
+    
+    }
+
+    
+    void activateVictoryCountdownForEnemy()
+    {
+        
+    }
+    void deactivateVictoryCountdownForEnemy()
+    {
+    
+    }
+
+    void activateNeutralCountdown()
+    {
+        
+    }
+
+    void resetNeutralCountdown()
+    {
+        
+    }
+    #endregion
 }
