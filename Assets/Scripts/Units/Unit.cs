@@ -91,7 +91,7 @@ public abstract class Unit : MonoBehaviour, IUnitBase
 
     public void Die()
     {
-        CommunicationEvents.RemoveUnitFromFactionList(this);
+        CommunicationEvents.RemoveUnitFromLists(this);
         Destroy(gameObject);
     }
 

@@ -36,7 +36,7 @@ public abstract class BaseController : MonoBehaviour
             }
         }
         CommunicationEvents.AddUnitToFactionList += addUnitToUnitList;
-        CommunicationEvents.RemoveUnitFromFactionList += removeUnitFromList;
+        CommunicationEvents.RemoveUnitFromLists += removeUnitFromList;
         CommunicationEvents.SetGathererInfo += addGathererToUnitList;
     }
 

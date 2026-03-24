@@ -32,8 +32,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3645186560788336915}
   - {fileID: 3828796915596033231}
+  - {fileID: 3645186560788336915}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1296799102646122349
@@ -59,7 +59,7 @@ MonoBehaviour:
   nodes:
   - {fileID: 0}
   - {fileID: 0}
-  maxNumberOfTroops: 30
+  maxNumberOfTroops: 16
   ActiveUnits: []
   waypointsTop:
   - {fileID: 0}
@@ -97,7 +97,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 62630d5f81cab634fb998d360c6f4984, type: 2}
   - {fileID: 11400000, guid: 9f99a07f6b1a0c3498735858be85413c, type: 2}
   funds: 0
-  startingFunds: 300
+  startingFunds: 100
 --- !u!114 &6823315901923767553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,7 +128,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1934584792056948662, guid: 1c182ab5ad03b804e80f2b2ee3df03ad, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.0086
+      value: 0.0244
       objectReference: {fileID: 0}
     - target: {fileID: 1934584792056948662, guid: 1c182ab5ad03b804e80f2b2ee3df03ad, type: 3}
       propertyPath: m_LocalPosition.y
@@ -136,11 +136,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1934584792056948662, guid: 1c182ab5ad03b804e80f2b2ee3df03ad, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.048
+      value: 0.0043
+      objectReference: {fileID: 0}
+    - target: {fileID: 2686658040870070439, guid: 1c182ab5ad03b804e80f2b2ee3df03ad, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 46.822693
+      objectReference: {fileID: 0}
+    - target: {fileID: 2686658040870070439, guid: 1c182ab5ad03b804e80f2b2ee3df03ad, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 46.822693
+      objectReference: {fileID: 0}
+    - target: {fileID: 2686658040870070439, guid: 1c182ab5ad03b804e80f2b2ee3df03ad, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 46.822693
       objectReference: {fileID: 0}
     - target: {fileID: 2686658040870070439, guid: 1c182ab5ad03b804e80f2b2ee3df03ad, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 86.619
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 2686658040870070439, guid: 1c182ab5ad03b804e80f2b2ee3df03ad, type: 3}
       propertyPath: m_LocalPosition.y
@@ -178,10 +190,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2913893834401597771, guid: 1c182ab5ad03b804e80f2b2ee3df03ad, type: 3}
+      propertyPath: m_Extents.z
+      value: 0.11
+      objectReference: {fileID: 0}
     - target: {fileID: 4295748467306506012, guid: 1c182ab5ad03b804e80f2b2ee3df03ad, type: 3}
       propertyPath: factionController
       value: 
       objectReference: {fileID: 1296799102646122349}
+    - target: {fileID: 4609480100507616693, guid: 1c182ab5ad03b804e80f2b2ee3df03ad, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 9124952430063623672, guid: 1c182ab5ad03b804e80f2b2ee3df03ad, type: 3}
       propertyPath: m_Name
       value: Player Castle Top
@@ -211,27 +231,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1934584792056948662, guid: 1c182ab5ad03b804e80f2b2ee3df03ad, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.0131
+      value: 0.0221
       objectReference: {fileID: 0}
     - target: {fileID: 1934584792056948662, guid: 1c182ab5ad03b804e80f2b2ee3df03ad, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.0598
+      value: -0.0393
       objectReference: {fileID: 0}
     - target: {fileID: 1934584792056948662, guid: 1c182ab5ad03b804e80f2b2ee3df03ad, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.0616
+      value: -0.0059
       objectReference: {fileID: 0}
     - target: {fileID: 2686658040870070439, guid: 1c182ab5ad03b804e80f2b2ee3df03ad, type: 3}
       propertyPath: m_LocalScale.x
-      value: 532.59
+      value: 36.8198
       objectReference: {fileID: 0}
     - target: {fileID: 2686658040870070439, guid: 1c182ab5ad03b804e80f2b2ee3df03ad, type: 3}
       propertyPath: m_LocalScale.y
-      value: 532.59
+      value: 36.8198
       objectReference: {fileID: 0}
     - target: {fileID: 2686658040870070439, guid: 1c182ab5ad03b804e80f2b2ee3df03ad, type: 3}
       propertyPath: m_LocalScale.z
-      value: 532.59
+      value: 36.8198
       objectReference: {fileID: 0}
     - target: {fileID: 2686658040870070439, guid: 1c182ab5ad03b804e80f2b2ee3df03ad, type: 3}
       propertyPath: m_LocalPosition.x
@@ -239,7 +259,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2686658040870070439, guid: 1c182ab5ad03b804e80f2b2ee3df03ad, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -22.3
+      value: -29.9
       objectReference: {fileID: 0}
     - target: {fileID: 2686658040870070439, guid: 1c182ab5ad03b804e80f2b2ee3df03ad, type: 3}
       propertyPath: m_LocalPosition.z
@@ -280,7 +300,7 @@ PrefabInstance:
     - target: {fileID: 4295748467306506012, guid: 1c182ab5ad03b804e80f2b2ee3df03ad, type: 3}
       propertyPath: buildingBody
       value: 
-      objectReference: {fileID: 1454107934772341636}
+      objectReference: {fileID: 0}
     - target: {fileID: 4295748467306506012, guid: 1c182ab5ad03b804e80f2b2ee3df03ad, type: 3}
       propertyPath: factionController
       value: 
@@ -334,11 +354,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c182ab5ad03b804e80f2b2ee3df03ad, type: 3}
---- !u!1 &1454107934772341636 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 283911407068402224, guid: 1c182ab5ad03b804e80f2b2ee3df03ad, type: 3}
-  m_PrefabInstance: {fileID: 1719988707107338676}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2112246453725016928 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 760708564163185364, guid: 1c182ab5ad03b804e80f2b2ee3df03ad, type: 3}
