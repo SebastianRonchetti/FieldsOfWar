@@ -15,8 +15,9 @@ public class EnemyTower : Tower
         alliesInGarrison = new GameObject[maxGarrison];
     }
 
-    void FixedUpdate()
+    public override void FixedUpdate()
     {
+        base.FixedUpdate();
         if (!checkGarrisonFull())
         {
             FindAlliesInRange();

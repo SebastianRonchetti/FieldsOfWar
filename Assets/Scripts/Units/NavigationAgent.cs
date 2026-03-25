@@ -18,8 +18,14 @@ public class NavigationAgent : MonoBehaviour
     UIManager ins;
     private int currentWaypointIndex = 0;
     [SerializeField]private int lastcommand = -1, command, requiredUnits = 20;
-    private static bool timerRunning = false;
-    private static float timerCountdown = 0f, controlDuration = 30f, proximityThreshold = 1.5f;
+    /* private static bool timerRunning = false;
+    private static float timerCountdown = 0f, controlDuration = 30f, proximityThreshold = 1.5f; */
+    Rigidbody rb;
+
+    void Awake()
+    {
+        TryGetComponent(out rb);
+    }
     void Start()
     {
         if (agent == null)
@@ -62,7 +68,7 @@ public class NavigationAgent : MonoBehaviour
 
         CheckIfReachedDestination();
         //Whats this for? V - Sb
-        if (timerRunning)
+        /* if (timerRunning)
         {
             timerCountdown -= Time.deltaTime;
             UIManager.Instance.UpdateTimerDisplay(timerCountdown);
@@ -72,7 +78,7 @@ public class NavigationAgent : MonoBehaviour
                 timerRunning = false;
                 // win / lose screen
             }
-        }
+        } */
 
     }
 
@@ -125,6 +131,7 @@ public class NavigationAgent : MonoBehaviour
     {
         if (waypoints.Length == 0) return;
 
+        rb.isKinematic = false;
         currentWaypointIndex = 0;
         agent.SetDestination(waypoints[currentWaypointIndex].position);
     }
@@ -132,6 +139,7 @@ public class NavigationAgent : MonoBehaviour
 
     private void StopMoving()
     {
+        rb.isKinematic = true;
         agent.ResetPath();
     }
 

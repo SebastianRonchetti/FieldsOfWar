@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using NUnit.Framework;
 using TMPro;
 using Unity.VisualScripting;
@@ -21,6 +22,7 @@ public class UIManager : MonoBehaviour
     private bool isTopTrackSelected = true;
     public CommandsGroup commandsGroup;
     private int topFloorUnitCount = 0, bottomFloorUnitCount = 0, maxCount = 16;
+    public TMP_Text timerText;
     
     void instantiate()
     {
@@ -41,6 +43,7 @@ public class UIManager : MonoBehaviour
         levelManager = LevelManager.Instance;
         CommunicationEvents.updateFunds += UpdateCurrentGoldAmount;
         CommunicationEvents.updateUnitCount += UpdateCurrentNumOfUnits;
+        CommunicationEvents.updateTimer += UpdateTimerDisplay;
         audioSource.loop = true;
         audioSource.clip = music;
         audioSource.Play();
@@ -102,11 +105,24 @@ public class UIManager : MonoBehaviour
     {
         //
     }
-    public TMP_Text timerText;
 
-    public void UpdateTimerDisplay(float timeLeft)
+    public void UpdateTimerDisplay(float timeToVictoryLeft, string controllingFaction)
     {
-        timerText.text = Mathf.Ceil(timeLeft).ToString("00") + "s";
+        switch (controllingFaction)
+        {
+            case "Neutral":
+            timerText.color = new Color32(224, 131, 54, 255);
+            timerText.text = "Neutral";
+                break;
+            case "Enemy":
+            timerText.color = new Color32(191, 27, 6, 255);
+            timerText.text = $"{Mathf.Ceil(timeToVictoryLeft).ToString("00:00")} until Enemy forces win";
+                break;
+            case "Player":
+            timerText.color = new Color32(9, 128, 23, 255);
+            timerText.text = $"{Mathf.Ceil(timeToVictoryLeft).ToString("00:00")} until Player forces win";
+                break;
+        }
     }
 
     public void pause()

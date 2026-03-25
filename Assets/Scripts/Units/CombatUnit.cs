@@ -21,8 +21,6 @@ public class CombatUnit : Unit
         {
             targetEnemy = FindEnemyInVision();
         }
-        //move towards checkpoint
-        base.Update();
         //move towards enemy
         if (command != 0)
         {
@@ -50,6 +48,9 @@ public class CombatUnit : Unit
             {
                 command = previousCommand;
             }
+
+            //move towards checkpoint
+            base.Update();
         }
     }
 

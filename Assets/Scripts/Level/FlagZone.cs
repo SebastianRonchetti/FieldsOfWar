@@ -2,6 +2,10 @@ using UnityEngine;
 using UnityEngine.UI;
 public class FlagZone : MonoBehaviour
 {
+    /// <summary>
+    /// DEPRECATED 
+    /// See scripts/buildings/pond for timer and capture the flag logic
+    /// </summary>
     float timerForDomination, playerFactionCountdown, enemyFactionCountdown;
     bool occupiedByEnemy, occupiedByPlayer, playerFactionCountdownOn, enemyFactionCountdownOn;
     Sprite countdownBar;

@@ -6,13 +6,14 @@ public abstract class Unit : MonoBehaviour, IUnitBase
     
     public float speed, shortRange, longRange, distanceToTarget, attackCooldown;
     public int damage, health, maxHealth, command, previousCommand;
-    public bool canAttack, isOnTopTrack;
+    public bool canAttack, isOnTopTrack, moving;
     public string faction;
     [SerializeField] GameObject playerGraphics, enemyGraphics;
     protected NavigationAgent agent;
     HealthBar healthBar;
     [Header("Targeting")]
     [SerializeField]protected Transform target, previousTarget;
+    Rigidbody rb;
 
     void Awake()
     {
@@ -21,6 +22,7 @@ public abstract class Unit : MonoBehaviour, IUnitBase
         agent = GetComponent<NavigationAgent>();
         healthBar.setMaxValue(maxHealth);
         command = 1; //Hold position
+        TryGetComponent(out rb);
     }
 
     public virtual void Update()

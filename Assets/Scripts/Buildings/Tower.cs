@@ -3,6 +3,7 @@ using System.Collections;
 using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading.Tasks;
 using NUnit.Framework;
+using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 using UnityEngine.Pool;
 
@@ -13,7 +14,7 @@ public class Tower : Building
     protected bool canAttack = true;
     [SerializeField] protected LayerMask opposingLayer;
     protected string opposingFaction;
-    Unit currentTarget;
+    [SerializeField] Unit currentTarget;
 
     protected override void Awake()
     {
@@ -30,7 +31,7 @@ public class Tower : Building
         }
     }
 
-    private void FixedUpdate()
+    public virtual void FixedUpdate()
     {
         if (FindEnemyInRange() && canAttack && !Destroyed)
         {

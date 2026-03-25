@@ -14,13 +14,14 @@ public class Pond : ResourceNode
     [SerializeField] float countdownToWin_Minutes, countdownToNeutral_Seconds, range;
     float countdownToWin_Progress, countdownToNeutral_Progress;
     [SerializeField] string currentlyOccupyingFaction, previouslyOccupyingFaction;
-    [SerializeField] int resourceYield;
-    List<Unit> unitsInRange;
+    [SerializeField] List<Unit> unitsInRange;
     bool contestedTerritory, neutralCountdownOn = false, countdownToVictoryRunning = false;
 
     void Awake()
     {
+        unitsInRange = new List<Unit>();
         CommunicationEvents.RemoveUnitFromLists += removeFromList;
+        currentlyOccupyingFaction = "Neutral";
     }
 
     public void sendResourcesToCurrentlyOccupyingFaction()
@@ -34,6 +35,7 @@ public class Pond : ResourceNode
         //adds units that come in range to a list.
         //if the incoming unit isnt of the same faction as the currently controlling faction
         //then it moves to alter control function
+        Debug.Log("Puto");
         Unit _unit;
         if(other.TryGetComponent(out _unit))unitsInRange.Add(_unit);
         if(other.gameObject.tag == currentlyOccupyingFaction) return;
@@ -72,6 +74,7 @@ public class Pond : ResourceNode
                 currentlyOccupyingFaction = "Neutral";
             }
         }
+        CommunicationEvents.updateTimer?.Invoke(countdownToWin_Progress, currentlyOccupyingFaction);
     }
 
     void alterControl()
@@ -151,31 +154,18 @@ public class Pond : ResourceNode
     }
 
     #region Testing
-    void activateVictoryCountdownForPlayer()
-    {
-        
-    }
-    void deactivateVictoryCountdownForPlayer()
-    {
-    
-    }
-
-    
-    void activateVictoryCountdownForEnemy()
-    {
-        
-    }
-    void deactivateVictoryCountdownForEnemy()
-    {
-    
-    }
-
-    void activateNeutralCountdown()
+    void switchVictoryCountdownForPlayer()
     {
         
     }
 
-    void resetNeutralCountdown()
+    
+    void switchVictoryCountdownForEnemy()
+    {
+        
+    }
+
+    void switchNeutralCountdown()
     {
         
     }
