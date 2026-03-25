@@ -7,7 +7,7 @@ public class GatheringUnit : Unit
 {
     [SerializeField] public GameObject resourceNode, castle, spawner;
     [SerializeField] bool goGather = true, loadingCargo = false, working = false;
-    ResourceNode nodeLogic;
+    [SerializeField] ResourceNode nodeLogic;
 
     void Start()
     {
@@ -38,7 +38,7 @@ public class GatheringUnit : Unit
 
     void FixedUpdate()
     {
-        if (loadingCargo && CalculateDistanceToTarget(castle.transform) < shortRange)
+        if (loadingCargo && CalculateDistanceToTarget(castle.transform) <= shortRange)
         {
             if (working) return;
             StartCoroutine(startDeposit());
