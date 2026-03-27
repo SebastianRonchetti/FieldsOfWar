@@ -35,7 +35,6 @@ public class Pond : ResourceNode
         //adds units that come in range to a list.
         //if the incoming unit isnt of the same faction as the currently controlling faction
         //then it moves to alter control function
-        Debug.Log("Puto");
         Unit _unit;
         if(other.TryGetComponent(out _unit))unitsInRange.Add(_unit);
         if(other.gameObject.tag == currentlyOccupyingFaction) return;
@@ -62,7 +61,15 @@ public class Pond : ResourceNode
             countdownToWin_Progress -= Time.deltaTime;
             if(countdownToWin_Progress <= 0)
             {
-                //currently occupying faction wins
+                switch (currentlyOccupyingFaction)
+                {
+                    case "Player":
+                    CommunicationEvents.onFactionDefeated("Enemy");
+                        break;
+                    case "Enemy":
+                    CommunicationEvents.onFactionDefeated("Player");
+                        break;
+                }
             }
         }
         else if (neutralCountdownOn)
@@ -107,7 +114,7 @@ public class Pond : ResourceNode
 
     void alterTovictoryCountdown(bool conflict)
     {
-        if(currentlyOccupyingFaction != previouslyOccupyingFaction)
+        if(currentlyOccupyingFaction != previouslyOccupyingFaction || currentlyOccupyingFaction == "Neutral")
         {
             countdownToWin_Progress = countdownToWin_Minutes * 60;
         }
