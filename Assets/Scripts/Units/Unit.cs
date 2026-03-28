@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public abstract class Unit : MonoBehaviour, IUnitBase
@@ -14,6 +15,7 @@ public abstract class Unit : MonoBehaviour, IUnitBase
     [Header("Targeting")]
     [SerializeField]protected Transform target, previousTarget;
     Rigidbody rb;
+    public Action<animationActions> triggerAnimationAction;
 
     void Awake()
     {
@@ -86,6 +88,7 @@ public abstract class Unit : MonoBehaviour, IUnitBase
             transform.Find("enemy-graphics").gameObject.SetActive(true);
             transform.Find("player-graphics").gameObject.SetActive(false);
         }
+        GetComponent<UnitAnimationManager>().setAnimations(tag);
         health = maxHealth;
         gameObject.layer = LayerMask.NameToLayer(_faction);
         Spawner.GetComponent<BaseController>().addUnitToUnitList(faction, this, _isOnTopTrack);

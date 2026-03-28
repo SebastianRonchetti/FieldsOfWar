@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 6967493655634798228}
   - component: {fileID: 1954972239536813831}
   - component: {fileID: -7921308968661710844}
+  - component: {fileID: 8585584110890792204}
+  - component: {fileID: 28890859954361794}
   m_Layer: 0
   m_Name: Melee Unit
   m_TagString: Player
@@ -63,6 +65,7 @@ MonoBehaviour:
   previousCommand: 0
   canAttack: 0
   isOnTopTrack: 0
+  moving: 0
   faction: Player
   playerGraphics: {fileID: 0}
   enemyGraphics: {fileID: 4107402372813715125}
@@ -166,6 +169,44 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 32
   m_CollisionDetection: 0
+--- !u!114 &8585584110890792204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8823196419603950312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 282424703af28524e805f6cf14dea5c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerController: {fileID: 9100000, guid: 1d761ed206cd2bb45a961f09d0396353, type: 2}
+  enemyController: {fileID: 9100000, guid: 36717c91969966d47b59ddcd87b22978, type: 2}
+  playerAvatar: {fileID: 9000000, guid: 6f71088071217f1448d08e38bd8ce41a, type: 3}
+  enemyAvatar: {fileID: 9000000, guid: c452a0e4894689441bd25521143b97d6, type: 3}
+--- !u!95 &28890859954361794
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8823196419603950312}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1109056523526308142
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -233,6 +274,18 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c21308447b29afc4b9ed2260dadba8a2, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3838637441865089737, guid: c21308447b29afc4b9ed2260dadba8a2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3838637441865089737, guid: c21308447b29afc4b9ed2260dadba8a2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3838637441865089737, guid: c21308447b29afc4b9ed2260dadba8a2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.51
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -322,6 +375,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5683555793510143133, guid: c452a0e4894689441bd25521143b97d6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.466
+      objectReference: {fileID: 0}
+    - target: {fileID: -5683555793510143133, guid: c452a0e4894689441bd25521143b97d6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.042
+      objectReference: {fileID: 0}
+    - target: {fileID: -5683555793510143133, guid: c452a0e4894689441bd25521143b97d6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.995
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c452a0e4894689441bd25521143b97d6, type: 3}
       propertyPath: m_Name
       value: enemy-graphics
@@ -335,7 +400,8 @@ PrefabInstance:
       value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: -7134707918919323653, guid: c452a0e4894689441bd25521143b97d6, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c452a0e4894689441bd25521143b97d6, type: 3}

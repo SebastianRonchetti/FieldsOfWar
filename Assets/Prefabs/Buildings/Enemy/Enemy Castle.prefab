@@ -93,6 +93,7 @@ MonoBehaviour:
   opposingLayer:
     serializedVersion: 2
     m_Bits: 64
+  currentTarget: {fileID: 0}
   maxTargets: 3
   enemies: []
 --- !u!65 &3348731870525358505
@@ -187,6 +188,10 @@ PrefabInstance:
     - target: {fileID: 7805588489973977121, guid: be9bc0c683de53948ab42b5a9e5be35b, type: 3}
       propertyPath: m_Name
       value: Healthbar Billboard
+      objectReference: {fileID: 0}
+    - target: {fileID: 7805588489973977121, guid: be9bc0c683de53948ab42b5a9e5be35b, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     - target: {fileID: 8248453995399444149, guid: be9bc0c683de53948ab42b5a9e5be35b, type: 3}
       propertyPath: m_Pivot.x
