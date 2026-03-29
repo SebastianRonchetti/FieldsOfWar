@@ -356,6 +356,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slider: {fileID: 2744351049223632092}
+  color: {fileID: 3082273989848959706}
 --- !u!1 &9134411337332355663
 GameObject:
   m_ObjectHideFlags: 0
