@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5409808206161086612}
   - component: {fileID: 3905899068789400080}
+  - component: {fileID: 5951637567154687997}
   m_Layer: 0
   m_Name: Player Resource node
   m_TagString: Untagged
@@ -47,6 +48,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   resourceYield: 10
   faction: Player
+--- !u!208 &5951637567154687997
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6993830130942375931}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 11.65, y: 18.43, z: 11.65}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1001 &3121412982786099371
 PrefabInstance:
   m_ObjectHideFlags: 0

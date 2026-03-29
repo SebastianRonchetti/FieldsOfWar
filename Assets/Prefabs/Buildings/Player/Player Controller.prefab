@@ -191,13 +191,49 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2913893834401597771, guid: 1c182ab5ad03b804e80f2b2ee3df03ad, type: 3}
+      propertyPath: m_Extents.x
+      value: 0.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 2913893834401597771, guid: 1c182ab5ad03b804e80f2b2ee3df03ad, type: 3}
+      propertyPath: m_Extents.y
+      value: 0.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 2913893834401597771, guid: 1c182ab5ad03b804e80f2b2ee3df03ad, type: 3}
       propertyPath: m_Extents.z
-      value: 0.11
+      value: 1.165
+      objectReference: {fileID: 0}
+    - target: {fileID: 2913893834401597771, guid: 1c182ab5ad03b804e80f2b2ee3df03ad, type: 3}
+      propertyPath: m_CarveOnlyStationary
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4295748467306506012, guid: 1c182ab5ad03b804e80f2b2ee3df03ad, type: 3}
       propertyPath: factionController
       value: 
       objectReference: {fileID: 1296799102646122349}
+    - target: {fileID: 4609480100507616693, guid: 1c182ab5ad03b804e80f2b2ee3df03ad, type: 3}
+      propertyPath: m_Size.x
+      value: -0.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 4609480100507616693, guid: 1c182ab5ad03b804e80f2b2ee3df03ad, type: 3}
+      propertyPath: m_Size.y
+      value: 0.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 4609480100507616693, guid: 1c182ab5ad03b804e80f2b2ee3df03ad, type: 3}
+      propertyPath: m_Size.z
+      value: 2.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 4609480100507616693, guid: 1c182ab5ad03b804e80f2b2ee3df03ad, type: 3}
+      propertyPath: m_Center.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4609480100507616693, guid: 1c182ab5ad03b804e80f2b2ee3df03ad, type: 3}
+      propertyPath: m_Center.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4609480100507616693, guid: 1c182ab5ad03b804e80f2b2ee3df03ad, type: 3}
+      propertyPath: m_Center.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4609480100507616693, guid: 1c182ab5ad03b804e80f2b2ee3df03ad, type: 3}
       propertyPath: m_IncludeLayers.m_Bits
       value: 4294967295

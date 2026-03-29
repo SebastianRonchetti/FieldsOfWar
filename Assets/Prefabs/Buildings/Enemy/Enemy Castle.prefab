@@ -93,6 +93,7 @@ MonoBehaviour:
   opposingLayer:
     serializedVersion: 2
     m_Bits: 64
+  currentTarget: {fileID: 0}
   maxTargets: 3
   enemies: []
 --- !u!65 &3348731870525358505
@@ -126,7 +127,7 @@ NavMeshObstacle:
   m_Enabled: 1
   serializedVersion: 3
   m_Shape: 1
-  m_Extents: {x: 0.03, y: 0.075, z: 0.105}
+  m_Extents: {x: 0.05, y: 0.075, z: 0.105}
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
