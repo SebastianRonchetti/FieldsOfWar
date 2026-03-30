@@ -16,8 +16,9 @@ public class NavigationAgent : MonoBehaviour
     Unit myUnit;
     public Transform[] waypoints;
     UIManager ins;
-    private int currentWaypointIndex = 0;
+    [SerializeField] int currentWaypointIndex = 0;
     [SerializeField]private int lastcommand = -1, command, requiredUnits = 20;
+    [SerializeField] float stoppingDistance;
     /* private static bool timerRunning = false;
     private static float timerCountdown = 0f, controlDuration = 30f, proximityThreshold = 1.5f; */
     Rigidbody rb;
@@ -36,7 +37,7 @@ public class NavigationAgent : MonoBehaviour
             agent.SetDestination(waypoints[currentWaypointIndex].position);
         }
         myUnit = GetComponent<Unit>();
-        agent.stoppingDistance = 0.5f;
+        agent.stoppingDistance = stoppingDistance;
         agent.speed = myUnit.speed;
       
     }
@@ -64,7 +65,7 @@ public class NavigationAgent : MonoBehaviour
             {
                 pursueTarget();
             }    
-        }
+        } 
 
         CheckIfReachedDestination();
         //Whats this for? V - Sb

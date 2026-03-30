@@ -94,9 +94,11 @@ MonoBehaviour:
   agent: {fileID: 6967493655634798228}
   waypoints:
   - {fileID: 0}
+  currentWaypointIndex: 0
   lastcommand: -1
   command: 0
   requiredUnits: 20
+  stoppingDistance: 8
 --- !u!195 &6967493655634798228
 NavMeshAgent:
   m_ObjectHideFlags: 0

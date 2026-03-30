@@ -88,7 +88,7 @@ public abstract class Unit : MonoBehaviour, IUnitBase
             transform.Find("enemy-graphics").gameObject.SetActive(true);
             transform.Find("player-graphics").gameObject.SetActive(false);
         }
-        GetComponent<UnitAnimationManager>().setAnimations(tag);
+        GetComponent<UnitAnimationManager>().setAnimations(_faction);
         health = maxHealth;
         gameObject.layer = LayerMask.NameToLayer(_faction);
         Spawner.GetComponent<BaseController>().addUnitToUnitList(faction, this, _isOnTopTrack);

@@ -92,7 +92,7 @@ NavMeshAgent:
   m_Acceleration: 23.5
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 8
+  m_StoppingDistance: 8.06
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -114,9 +114,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 6892017593882376284}
   waypoints: []
+  currentWaypointIndex: 0
   lastcommand: -1
   command: 0
   requiredUnits: 20
+  stoppingDistance: 8
 --- !u!136 &4250875194654731237
 CapsuleCollider:
   m_ObjectHideFlags: 0
