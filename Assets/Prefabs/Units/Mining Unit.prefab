@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 4899110397956644248}
   - component: {fileID: 8551708479497689280}
   - component: {fileID: 3875923515619188518}
+  - component: {fileID: -8543083126224048465}
   m_Layer: 0
   m_Name: Mining Unit
   m_TagString: Player
@@ -88,7 +89,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.1
-  m_Speed: 3.5
+  m_Speed: 0.5
   m_Acceleration: 23.5
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -99,7 +100,7 @@ NavMeshAgent:
   m_Height: 1.95
   m_BaseOffset: 0
   m_WalkableMask: 1
-  m_ObstacleAvoidanceType: 3
+  m_ObstacleAvoidanceType: 1
 --- !u!114 &5661494772832569568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,7 +168,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 48
   m_CollisionDetection: 0
 --- !u!95 &8551708479497689280
 Animator:
@@ -207,6 +208,22 @@ MonoBehaviour:
   enemyController: {fileID: 9100000, guid: 1eb37c2b0f56240448bf9adc263e5331, type: 2}
   playerAvatar: {fileID: 9000000, guid: 4148e11e70df86242a10d2c3847b44bb, type: 3}
   enemyAvatar: {fileID: 9000000, guid: 233e43703d15cd64cb13aa7760241a17, type: 3}
+--- !u!208 &-8543083126224048465
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219725527528226214}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 0.5, y: 1, z: 0.5}
+  m_MoveThreshold: 10
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 1, y: 0, z: 1}
+  m_TimeToStationary: 0.5
 --- !u!1001 &404367087460963792
 PrefabInstance:
   m_ObjectHideFlags: 0
