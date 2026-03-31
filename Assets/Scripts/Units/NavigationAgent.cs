@@ -17,7 +17,7 @@ public class NavigationAgent : MonoBehaviour
     public Transform[] waypoints;
     UIManager ins;
     [SerializeField] int currentWaypointIndex = 0;
-    [SerializeField]private int lastcommand = -1, command, requiredUnits = 20;
+    [SerializeField]private int lastcommand = -1, command; //requiredUnits = 20;
     [SerializeField] float stoppingDistance;
     /* private static bool timerRunning = false;
     private static float timerCountdown = 0f, controlDuration = 30f, proximityThreshold = 1.5f; */

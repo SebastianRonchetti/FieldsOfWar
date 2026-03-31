@@ -108,6 +108,10 @@ public class UIManager : MonoBehaviour
 
     public void UpdateTimerDisplay(float timeToVictoryLeft, string controllingFaction)
     {
+        int min = Mathf.FloorToInt(timeToVictoryLeft / 60);
+        int sec = Mathf.FloorToInt(timeToVictoryLeft % 60);
+        string timerTextContent = string.Format("{0:0}:{01:00}", min, sec);
+
         switch (controllingFaction)
         {
             case "Neutral":
@@ -116,11 +120,11 @@ public class UIManager : MonoBehaviour
                 break;
             case "Enemy":
             timerText.color = new Color32(191, 27, 6, 255);
-            timerText.text = $"{Mathf.Ceil(timeToVictoryLeft).ToString("00:00")} until Enemy forces win";
+            timerText.text = $"{timerTextContent} until Enemy forces win";
                 break;
             case "Player":
             timerText.color = new Color32(9, 128, 23, 255);
-            timerText.text = $"{Mathf.Ceil(timeToVictoryLeft).ToString("00:00")} until Player forces win";
+            timerText.text = $"{timerTextContent} until Player forces win";
                 break;
         }
     }

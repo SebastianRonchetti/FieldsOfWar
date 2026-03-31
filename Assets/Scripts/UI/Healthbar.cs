@@ -8,7 +8,6 @@ public class HealthBar : MonoBehaviour
     Transform cam;
     void Start()
     {
-        Debug.Log(transform.parent.tag);
         if(transform.parent.tag == "Enemy")
         {
             color.color = new Color32(235, 26, 2, 255);

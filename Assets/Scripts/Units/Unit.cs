@@ -16,6 +16,7 @@ public abstract class Unit : MonoBehaviour, IUnitBase
     [SerializeField]protected Transform target, previousTarget;
     Rigidbody rb;
     public Action<animationActions> triggerAnimationAction;
+    public Action<Unit> onDeath;
 
     void Awake()
     {
@@ -97,6 +98,7 @@ public abstract class Unit : MonoBehaviour, IUnitBase
     public void Die()
     {
         CommunicationEvents.RemoveUnitFromLists(this);
+        onDeath?.Invoke(this);
         Destroy(gameObject);
     }
 

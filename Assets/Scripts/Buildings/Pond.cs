@@ -36,7 +36,11 @@ public class Pond : ResourceNode
         //if the incoming unit isnt of the same faction as the currently controlling faction
         //then it moves to alter control function
         Unit _unit;
-        if(other.TryGetComponent(out _unit))unitsInRange.Add(_unit);
+        if(other.TryGetComponent(out _unit))
+        {
+            unitsInRange.Add(_unit);
+            _unit.onDeath += removeFromList;
+        }
         if(other.gameObject.tag == currentlyOccupyingFaction) return;
         
         alterControl();
@@ -86,22 +90,20 @@ public class Pond : ResourceNode
 
     void alterControl()
     {
-        if(!isPondInConflict())
+        if(!isPondInConflict() || currentlyOccupyingFaction == "Neutral")
         {
             if(unitsInRange.Count > 0)
             {
                 currentlyOccupyingFaction = unitsInRange[0].gameObject.tag;
             } 
-            else if(currentlyOccupyingFaction != "Neutral" &&  !neutralCountdownOn) 
+            
+            if(neutralCountdownOn) 
             {
                 alterNeutralCountdown();
                 return;
             }
         }
-        else
-        {
-            
-        }
+
         alterTovictoryCountdown(isPondInConflict());
         
     }
@@ -116,6 +118,7 @@ public class Pond : ResourceNode
     {
         if(currentlyOccupyingFaction != previouslyOccupyingFaction || currentlyOccupyingFaction == "Neutral")
         {
+            countdownToVictoryRunning = false;
             countdownToWin_Progress = countdownToWin_Minutes * 60;
         }
 
@@ -140,10 +143,12 @@ public class Pond : ResourceNode
     void removeFromList(Unit _unit)
     {
         unitsInRange.Remove(_unit);
+        alterControl();
     }
 
     bool isPondInConflict()
     {
+        if(areAllUnitsSameFaction()) return false;
         foreach(Unit unit in unitsInRange)
         {
             if (unit.gameObject.tag != currentlyOccupyingFaction)
@@ -153,6 +158,19 @@ public class Pond : ResourceNode
             }
         }
         return false;
+    }
+
+    bool areAllUnitsSameFaction()
+    {
+        if(unitsInRange.Count == 1) return true;
+        for(int i = 1; i < unitsInRange.Count; i++)
+        {
+            if(unitsInRange[i].gameObject.tag != unitsInRange[0].gameObject.tag)
+            {
+                return false;
+            }
+        }
+        return true;
     }
 
     void OnDrawGizmosSelected()
